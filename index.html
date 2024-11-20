@@ -9,174 +9,197 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f3f4f6;
-            color: #333;
-            direction: rtl; /* الاتجاه الافتراضي للعربية */
+            display: flex;
+            flex-direction: row-reverse;
+            direction: rtl;
+            background-color: #f4f4f4;
         }
         .container {
             display: flex;
+            justify-content: space-between;
+            width: 100%;
             max-width: 1200px;
             margin: 20px auto;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            flex-direction: row; /* الاتجاه الافتراضي للعربية */
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
-        .left {
+        .left-side {
             width: 33%;
-            background: #007bff;
-            color: white;
             padding: 20px;
+            border-right: 2px solid #ddd;
         }
-        .right {
+        .right-side {
             width: 66%;
             padding: 20px;
         }
-        .profile-pic {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .profile-pic img {
+        img {
+            width: 100%;
             border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            border: 3px solid white;
+            margin-bottom: 20px;
         }
         h1, h2, h3 {
-            margin-bottom: 15px;
-            color: #007bff;
+            color: #333;
         }
-        .section {
-            margin-bottom: 20px;
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
         }
         ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
         }
         ul li {
-            margin-bottom: 10px;
+            margin: 5px 0;
         }
-        /* زر تغيير اللغة */
-        .language-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #007bff;
+        .btn {
+            background-color: #28a745;
             color: white;
             padding: 10px 15px;
+            text-align: center;
+            cursor: pointer;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            z-index: 1000;
+            margin-bottom: 20px;
+        }
+        .btn:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
-    <button class="language-toggle" onclick="toggleLanguage()">التبديل إلى الإنجليزية</button>
 
-    <div class="container" id="cv-content">
-        <!-- الجزء الأيسر -->
-        <div class="left">
-            <div class="profile-pic">
-                <img src="profile.jpg" alt="صورة شفيق صلاح">
-            </div>
-            <h1 id="name">شفيق صلاح</h1>
+    <div class="container">
+        <div class="left-side">
+            <img src="profile.jpg" alt="شفيق صلاح">
+            <h1>شفيق صلاح</h1>
+            <p>تاريخ الميلاد: 1999</p>
+            <p>مكان الإقامة: المنصورة، مصر</p>
+            <p>البريد الإلكتروني: [أدخل بريدك الإلكتروني هنا]</p>
+            <p>رقم الهاتف: [أدخل رقم هاتفك هنا]</p>
 
-            <div class="section">
-                <h2>المعلومات الشخصية</h2>
-                <p id="birthdate">تاريخ الميلاد: 1999</p>
-                <p id="location">مكان الإقامة: المنصورة، مصر</p>
-                <p id="email">البريد الإلكتروني: [أدخل بريدك الإلكتروني هنا]</p>
-                <p id="phone">رقم الهاتف: [أدخل رقم هاتفك هنا]</p>
-            </div>
+            <button class="btn" id="toggleLanguageBtn">التبديل إلى الإنجليزية</button>
         </div>
+        <div class="right-side">
+            <h2>الملخص المهني</h2>
+            <p id="summary">
+                محترف متعدد المهارات بخبرة تمتد لأكثر من 10 سنوات في إدارة العمليات، التصميم، التسويق، وتدريب الفرق.
+                أمتلك خبرة شاملة في التعاقد على أكثر من 150 مشروع مطبخ من البداية إلى التسليم.
+                حضّرت ورش عمل متنوعة مقدمة من جوجل وشركات أخرى، معتمدًا على التعلم الذاتي المستمر من الإنترنت لتطوير مهاراتي.
+                أتميز بقدرة استثنائية على الفهم والاستيعاب، مع أسلوب شرح بسيط يُسرّع تعلم الآخرين.
+            </p>
 
-        <!-- الجزء الأيمن -->
-        <div class="right">
-            <div class="section">
-                <h2 id="summary-title">الملخص المهني</h2>
-                <p id="summary">محترف متعدد المهارات بخبرة تمتد لأكثر من 10 سنوات في إدارة العمليات، التصميم، التسويق، وتدريب الفرق. أمتلك خبرة شاملة في التعاقد على أكثر من 150 مشروع مطبخ من البداية إلى التسليم.</p>
-            </div>
+            <h2>المهارات الأساسية</h2>
+            <ul id="skills">
+                <li>إدارة المشاريع وتنفيذها</li>
+                <li>التدريب وتطوير الأفراد</li>
+                <li>تصميم واجهات وتجارب المستخدم (UI/UX)</li>
+                <li>التصميم الإبداعي</li>
+                <li>التكنولوجيا والعملات الرقمية</li>
+                <li>التسويق الرقمي وإدارة المحتوى</li>
+            </ul>
 
-            <div class="section">
-                <h2 id="skills-title">المهارات الأساسية</h2>
-                <ul id="skills">
-                    <li>إدارة المشاريع وتنفيذها</li>
-                    <li>التدريب وتطوير الأفراد</li>
-                    <li>تصميم واجهات وتجارب المستخدم (UI/UX)</li>
-                    <li>التصميم الإبداعي</li>
-                    <li>التكنولوجيا والعملات الرقمية</li>
-                    <li>التسويق الرقمي وإدارة المحتوى</li>
-                </ul>
-            </div>
+            <h2>الخبرات العملية</h2>
+            <ul id="experience">
+                <li>مدير معرض مطابخ - شركة الماسية (2023 - حتى الآن)</li>
+                <li>مصمم UI/UX - مستقل (2020 - حتى الآن)</li>
+                <li>مدرب في مجالات المبيعات والتكنولوجيا - مستقل (2019 - حتى الآن)</li>
+                <li>محلل ومدير عملات رقمية - مستقل (2020 - حتى الآن)</li>
+                <li>مسوق رقمي - شركة Chingari الهندية (2022-2023)</li>
+                <li>مصمم ومسوق - مستقل (2016 - حتى الآن)</li>
+                <li>خبير أجهزة إلكترونية - مستقل (2013 - حتى الآن)</li>
+            </ul>
 
-            <div class="section">
-                <h2 id="experience-title">الخبرات العملية</h2>
-                <ul id="experience">
-                    <li>مدير معرض مطابخ - شركة الماسية (2023 - حتى الآن)</li>
-                    <li>مصمم UI/UX - مستقل (2020 - حتى الآن)</li>
-                    <li>مدرب في مجالات المبيعات والتكنولوجيا - مستقل (2019 - حتى الآن)</li>
-                    <li>محلل ومدير عملات رقمية - مستقل (2020 - حتى الآن)</li>
-                </ul>
-            </div>
+            <h2>التعليم</h2>
+            <p>بكالوريوس تجارة، جامعة المنصورة، سنة التخرج: 2021</p>
+            <h2>الشهادات والدورات التدريبية</h2>
+            <ul>
+                <li>شهادة "المليون مبرمج عربي" (2018)</li>
+                <li>دورات احترافية في UI/UX Design باستخدام Figma وAdobe XD</li>
+                <li>ورش عمل مقدمة من جوجل وشركات أخرى في التصميم والتسويق الرقمي</li>
+                <li>دورات في تحليل وإدارة العملات الرقمية</li>
+                <li>ورش عمل متقدمة في تصميم الجرافيك والمونتاج باستخدام Adobe</li>
+            </ul>
+
+            <h2>اللغات</h2>
+            <p>العربية: اللغة الأم</p>
+            <p>الإنجليزية: مستوى متقدم (كتابة وتحدثًا)</p>
+
+            <h2>الإنجازات</h2>
+            <ul>
+                <li>تنفيذ أكثر من 150 مشروع تصميم مطبخ بنجاح.</li>
+                <li>زيادة مبيعات معرض الماسية من خلال استراتيجيات تصميم وتسويق مبتكرة.</li>
+                <li>تدريب فرق متعددة على مهارات المبيعات والتكنولوجيا الرقمية.</li>
+                <li>تصميم واجهات وتجارب مستخدم ناجحة لعدة تطبيقات ومواقع إلكترونية.</li>
+                <li>تحقيق أرباح مستدامة من إدارة العملات الرقمية.</li>
+            </ul>
+
+            <h2>الهوايات والاهتمامات</h2>
+            <ul>
+                <li>متابعة أحدث التقنيات الرقمية وتطبيقها في العمل.</li>
+                <li>تطوير الذات من خلال التعلم المستمر وحضور ورش عمل.</li>
+                <li>التصوير الفوتوغرافي وتصميم الفيديوهات.</li>
+                <li>مساعدة الآخرين على تطوير مهاراتهم وتحقيق النجاح.</li>
+            </ul>
+
+            <h2>الهدف المهني</h2>
+            <p>العمل في بيئة مبدعة تُقدّر الابتكار والكفاءة، والمساهمة بخبراتي في تحقيق نجاح مستدام للشركة وفريق العمل.</p>
         </div>
     </div>
+
     <script>
-        let isArabic = true; // الحالة الافتراضية للغة العربية
+        let isArabic = true; // لغة الصفحة الافتراضية (عربية)
+
+        // عند الضغط على الزر
+        document.getElementById('toggleLanguageBtn').addEventListener('click', function() {
+            toggleLanguage();
+        });
 
         function toggleLanguage() {
-            const body = document.body;
-            const container = document.querySelector('.container');
-            const toggleButton = document.querySelector('.language-toggle');
+            const summary = document.getElementById('summary');
+            const skills = document.getElementById('skills');
+            const experience = document.getElementById('experience');
+            const toggleButton = document.getElementById('toggleLanguageBtn');
 
             if (isArabic) {
-                // تحويل إلى الإنجليزية
-                body.style.direction = "ltr";
-                container.style.flexDirection = "row-reverse";
-
-                // تحديث النصوص
-                document.getElementById("name").innerText = "Shafik Salah";
-                document.getElementById("birthdate").innerText = "Birthdate: 1999";
-                document.getElementById("location").innerText = "Location: Mansoura, Egypt";
-                document.getElementById("email").innerText = "Email: [Insert your email here]";
-                document.getElementById("phone").innerText = "Phone: [Insert your phone number here]";
-                document.getElementById("summary-title").innerText = "Professional Summary";
-                document.getElementById("summary").innerText = "A multi-skilled professional with over 10 years of experience in operations management, design, marketing, and team training. Extensive experience in contracting over 150 kitchen projects from start to finish.";
-                document.getElementById("skills-title").innerText = "Core Skills";
-                document.getElementById("skills").innerHTML = 
+                // تحويل النصوص إلى الإنجليزية
+                summary.innerHTML = 
+                    A multi-skilled professional with over 10 years of experience in operations management, design, marketing, and team training.
+                    I have comprehensive experience in contracting over 150 kitchen projects from start to finish.
+                    I have conducted various workshops provided by Google and other companies, relying on continuous self-learning from the internet to develop my skills.
+                    I have an exceptional ability to understand and explain things with a simple style that accelerates learning.
+                ;
+                skills.innerHTML = 
                     <li>Project Management and Execution</li>
                     <li>Training and Individual Development</li>
                     <li>UI/UX Design</li>
                     <li>Creative Design</li>
-                    <li>Technology and Cryptocurrencies</li>
+                    <li>Technology and Digital Currency</li>
                     <li>Digital Marketing and Content Management</li>
                 ;
-                document.getElementById("experience-title").innerText = "Work Experience";
-                document.getElementById("experience").innerHTML = 
-                    <li>Kitchen Showroom Manager - Al-Masia Company (2023 - Present)</li>
-                    <li>UI/UX Designer - Freelancer (2020 - Present)</li>
-                    <li>Trainer in Sales and Technology - Freelancer (2019 - Present)</li>
-                    <li>Cryptocurrency Analyst and Manager - Freelancer (2020 - Present)</li>
+                experience.innerHTML = 
+                    <li>Kitchen Showroom Manager - Al-Masiah Company (2023 - Present)</li>
+                    <li>UI/UX Designer - Freelance (2020 - Present)</li>
+                    <li>Sales and Technology Trainer - Freelance (2019 - Present)</li>
+                    <li>Cryptocurrency Analyst and Manager - Freelance (2020 - Present)</li>
+                    <li>Digital Marketer - Chingari India (2022-2023)</li>
+                    <li>Designer and Marketer - Freelance (2016 - Present)</li>
+                    <li>Electronic Devices Expert - Freelance (2013 - Present)</li>
                 ;
-
-                toggleButton.innerText = "التبديل إلى العربية";
+                toggleButton.innerText = "Switch to Arabic";
             } else {
-                // العودة إلى العربية
-                body.style.direction = "rtl";
-                container.style.flexDirection = "row";
-
-                // تحديث النصوص
-                document.getElementById("name").innerText = "شفيق صلاح";
-                document.getElementById("birthdate").innerText = "تاريخ الميلاد: 1999";
-                document.getElementById("location").innerText = "مكان الإقامة: المنصورة، مصر";
-                document.getElementById("email").innerText = "البريد الإلكتروني: [أدخل بريدك الإلكتروني هنا]";
-                document.getElementById("phone").innerText = "رقم الهاتف: [أدخل رقم هاتفك هنا]";
-                document.getElementById("summary-title").innerText = "الملخص المهني";
-                document.getElementById("summary").innerText = "محترف متعدد المهارات بخبرة تمتد لأكثر من 10 سنوات في إدارة العمليات، التصميم، التسويق، وتدريب الفرق. أمتلك خبرة شاملة في التعاقد على أكثر من 150 مشروع مطبخ من البداية إلى التسليم.";
-                document.getElementById("skills-title").innerText = "المهارات الأساسية";
-                document.getElementById("skills").innerHTML = `
+                // تحويل النصوص إلى العربية
+                summary.innerHTML = 
+                    محترف متعدد المهارات بخبرة تمتد لأكثر من 10 سنوات في إدارة العمليات، التصميم، التسويق، وتدريبالفرق. أمتلك خبرة شاملة في التعاقد على أكثر من 150 مشروع مطبخ من البداية إلى التسليم. حضّرت ورش عمل متنوعة مقدمة من جوجل وشركات أخرى، معتمدًا على التعلم الذاتي المستمر من الإنترنت لتطوير مهاراتي. أتميز بقدرة استثنائية على الفهم والاستيعاب، مع أسلوب شرح بسيط يُسرّع تعلم الآخرين.
+                ;
+                skills.innerHTML = 
                     <li>إدارة المشاريع وتنفيذها</li>
                     <li>التدريب وتطوير الأفراد</li>
                     <li>تصميم واجهات وتجارب المستخدم (UI/UX)</li>
@@ -184,19 +207,31 @@
                     <li>التكنولوجيا والعملات الرقمية</li>
                     <li>التسويق الرقمي وإدارة المحتوى</li>
                 ;
-                document.getElementById("experience-title").innerText = "الخبرات العملية";
-                document.getElementById("experience").innerHTML = 
+                experience.innerHTML = 
                     <li>مدير معرض مطابخ - شركة الماسية (2023 - حتى الآن)</li>
                     <li>مصمم UI/UX - مستقل (2020 - حتى الآن)</li>
                     <li>مدرب في مجالات المبيعات والتكنولوجيا - مستقل (2019 - حتى الآن)</li>
                     <li>محلل ومدير عملات رقمية - مستقل (2020 - حتى الآن)</li>
-                `;
-
-                toggleButton.innerText = "التبديل إلى الإنجليزية";
+                    <li>مسوق رقمي - شركة Chingari الهندية (2022-2023)</li>
+                    <li>مصمم ومسوق - مستقل (2016 - حتى الآن)</li>
+                    <li>خبير أجهزة إلكترونية - مستقل (2013 - حتى الآن)</li>
+                ;
+                toggleButton.innerText = "Switch to English";
             }
 
-            // عكس حالة اللغة
+            // التبديل بين اللغة العربية والإنجليزية
             isArabic = !isArabic;
+
+            // قلب اتجاه الصفحة
+            if (isArabic) {
+                document.documentElement.setAttribute("lang", "ar");
+                document.body.style.direction = "rtl";
+                document.querySelector(".container").style.flexDirection = "row-reverse";
+            } else {
+                document.documentElement.setAttribute("lang", "en");
+                document.body.style.direction = "ltr";
+                document.querySelector(".container").style.flexDirection = "row";
+            }
         }
     </script>
 </body>
