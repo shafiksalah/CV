@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shafik Salah - CV</title>
+    <title>السيرة الذاتية - شفيق صلاح</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f9f9f9;
+            background-color: #f3f4f6;
             color: #333;
-            line-height: 1.6;
+            direction: rtl;
         }
         .container {
             display: flex;
@@ -44,6 +44,7 @@
         }
         h1, h2, h3 {
             margin-bottom: 15px;
+            color: #007bff;
         }
         .section {
             margin-bottom: 20px;
@@ -57,9 +58,6 @@
             font-size: 0.9em;
             margin: 5px;
         }
-        .contact p, .summary p {
-            margin-bottom: 10px;
-        }
         ul {
             list-style-type: none;
             padding: 0;
@@ -67,88 +65,115 @@
         ul li {
             margin-bottom: 10px;
         }
-        a {
+        /* زر تغيير اللغة */
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #007bff;
             color: white;
-            text-decoration: underline;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            z-index: 1000;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Left Section -->
+    <button class="language-toggle" onclick="toggleLanguage()">Switch to English</button>
+
+    <div class="container" id="cv-content">
+        <!-- الجزء الأيسر -->
         <div class="left">
-            <!-- Profile Picture -->
             <div class="profile-pic">
-                <img src="profile.jpg" alt="Your Photo">
+                <img src="profile.jpg" alt="صورة شفيق صلاح">
+            </div>
+            <h1>شفيق صلاح</h1>
+            <p id="summary">محترف متعدد المهارات</p>
+
+            <div class="section">
+                <h2>المعلومات الشخصية</h2>
+                <p>تاريخ الميلاد: 1999</p>
+                <p>مكان الإقامة: المنصورة، مصر</p>
+                <p>البريد الإلكتروني: [أدخل بريدك الإلكتروني هنا]</p>
+                <p>رقم الهاتف: [أدخل رقم هاتفك هنا]</p>
             </div>
 
-            <!-- Name -->
-            <h1>Shafik Salah</h1>
-            <p>UI/UX Designer | AI Specialist | Digital Marketer</p>
-
-            <!-- Summary -->
-            <div class="section summary">
-                <h2>Summary</h2>
-                <p>Over 10 years of experience in design, marketing, and technology. Expert in AI tools, cryptocurrency, and training professionals.</p>
+            <div class="section">
+                <h2>الملخص المهني</h2>
+                <p id="summary-ar">محترف متعدد المهارات بخبرة تمتد لأكثر من 10 سنوات في إدارة العمليات، التصميم، التسويق، وتدريب الفرق. أمتلك خبرة شاملة في التعاقد على أكثر من 150 مشروع مطبخ من البداية إلى التسليم.</p>
+                <p id="summary-en" style="display:none;">A multi-skilled professional with over 10 years of experience in operations management, design, marketing, and team training. I have extensive experience in contracting over 150 kitchen projects from start to finish.</p>
             </div>
 
-            <!-- Skills -->
-            <div class="section skills">
-                <h2>Skills</h2>
-                <span>UI/UX Design</span>
-                <span>Adobe Suite</span>
-                <span>AI Tools</span>
-                <span>Cryptocurrency</span>
-                <span>Marketing</span>
-                <span>3D Design</span>
-            </div>
-
-            <!-- Contact -->
-            <div class="section contact">
-                <h2>Contact</h2>
-                <p>Email: your_email@example.com</p>
-                <p>Phone: +201XXXXXXXXX</p>
-                <p>Location: Mansoura, Egypt</p>
-                <p><a href="https://github.com/YourGitHub" target="_blank">View My GitHub Profile</a></p>
+            <div class="section">
+                <h2>المهارات الأساسية</h2>
+                <div id="skills-ar">
+                    <span>إدارة المشاريع</span>
+                    <span>تدريب الأفراد</span>
+                    <span>UI/UX</span>
+                    <span>Adobe Suite</span>
+                    <span>العملات الرقمية</span>
+                    <span>التسويق الرقمي</span>
+                </div>
+                <div id="skills-en" style="display:none;">
+                    <span>Project Management</span>
+                    <span>Team Training</span>
+                    <span>UI/UX</span>
+                    <span>Adobe Suite</span>
+                    <span>Cryptocurrencies</span>
+                    <span>Digital Marketing</span>
+                </div>
             </div>
         </div>
 
-        <!-- Right Section -->
+        <!-- الجزء الأيمن -->
         <div class="right">
-            <!-- Work Experience -->
             <div class="section">
-                <h2>Work Experience</h2>
-                <ul>
-                    <li><strong>Kitchen Manager</strong> @ Al-Masiya (2023 - Present)</li>
-                    <p>Managed over 150 projects from client consultation to delivery.</p>
-                    <li><strong>Digital Marketer</strong> @ Chingari (2022 - 2023)</li>
-                    <p>Built an Arab community for the app and drove its growth regionally.</p>
+                <h2>الخبرات العملية</h2>
+                <ul id="experience-ar">
+                    <li><strong>مدير معرض مطابخ</strong> - شركة الماسية (2023 - حتى الآن)</li>
+                    <p>إدارة العمليات اليومية والتعاقد على أكثر من 150 مطبخ.</p>
+                    <!-- بقية التجارب -->
                 </ul>
-            </div>
-            <!-- Certificates -->
-            <div class="section">
-                <h2>Certificates</h2>
-                <ul>
-                    <li>Advanced Data Analysis Nanodegree - Udacity</li>
-                    <li>Google Marketing Fundamentals Workshop</li>
+                <ul id="experience-en" style="display:none;">
+                    <li><strong>Kitchen Showroom Manager</strong> - Al-Masia Company (2023 - Present)</li>
+                    <p>Managed daily operations and contracted over 150 kitchens.</p>
+                    <!-- Other experiences -->
                 </ul>
             </div>
 
-            <!-- Projects -->
             <div class="section">
-                <h2>Projects</h2>
-                <ul>
-                    <li><strong>Kitchen Design</strong>: Designed custom kitchens with 3D modeling tools.</li>
-                    <li><strong>AI Analysis Tools</strong>: Implemented AI-driven solutions for process automation.</li>
-                </ul>
+                <h2>التعليم</h2>
+                <p id="education-ar">بكالوريوس تجارة - جامعة المنصورة (2021)</p>
+                <p id="education-en" style="display:none;">Bachelor of Commerce - Mansoura University (2021)</p>
             </div>
 
-            <!-- Education -->
-            <div class="section">
-                <h2>Education</h2>
-                <p>Bachelor of Commerce - Mansoura University (2021)</p>
-            </div>
+            <!-- بقية الأقسام مشابهة باستخدام نفس النهج -->
         </div>
     </div>
+
+    <script>
+        function toggleLanguage() {
+            // تغيير بين العربية والإنجليزية
+            var isArabic = document.getElementById("summary-ar").style.display !== "none";
+            
+            document.getElementById("summary-ar").style.display = isArabic ? "none" : "block";
+            document.getElementById("summary-en").style.display = isArabic ? "block" : "none";
+            
+            document.getElementById("skills-ar").style.display = isArabic ? "none" : "block";
+            document.getElementById("skills-en").style.display = isArabic ? "block" : "none";
+            
+            document.getElementById("experience-ar").style.display = isArabic ? "none" : "block";
+            document.getElementById("experience-en").style.display = isArabic ? "block" : "none";
+            
+            document.getElementById("education-ar").style.display = isArabic ? "none" : "block";
+            document.getElementById("education-en").style.display = isArabic ? "block" : "none";
+
+            // تغيير النص داخل زر التبديل
+            document.querySelector(".language-toggle").innerText = isArabic ? "التبديل إلى العربية" : "Switch to English";
+        }
+    </script>
 </body>
 </html>
