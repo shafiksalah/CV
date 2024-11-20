@@ -16,7 +16,7 @@
         .sidebar img {
             width: 150px; /* تحديد العرض */
             height: 150px; /* تحديد الارتفاع */
-            /*object-fit: cover;*/ /* لضمان تناسب الصورة داخل الإطار */
+            object-fit: cover; /* لضمان تناسب الصورة داخل الإطار */
             border-radius: 50%; /* لإعطاء شكل دائري */
             margin-bottom: 20px;
         }
@@ -68,9 +68,9 @@
 <body>
     <button class="toggle-button" onclick="toggleLanguage()">Switch to English</button>
     <div class="container">
-         <img src="photo1.jpg" alt="Profile Image">
+         
         <div class="sidebar">
-           
+           <img src="photo1.jpg" alt="Profile Image">
             <h2>المعلومات الشخصية</h2>
             <ul id="personal-info">
                 <li>الاسم: شفيق صلاح</li>
