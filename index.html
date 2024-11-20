@@ -6,60 +6,134 @@
     <title>CV - Shafik Salah</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background: #f4f4f4;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            text-align: center;
             color: #333;
         }
-        .section {
+        .header {
+            background: #007bff;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        .header img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1, h2, h3 {
+            text-align: center;
             margin-bottom: 20px;
         }
+        .section {
+            margin-bottom: 30px;
+        }
         .section h3 {
+            color: #007bff;
             border-bottom: 2px solid #f4f4f4;
             padding-bottom: 5px;
             margin-bottom: 10px;
         }
         ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
         }
         ul li {
             margin-bottom: 10px;
         }
+        .contact, .skills {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .contact div, .skills div {
+            flex: 1;
+        }
+        .photo-section img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+        .btn-download {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn-download a {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .btn-download a:hover {
+            background: #0056b3;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="header">
+        <img src="profile.jpg" alt="Your Photo">
         <h1>Shafik Salah</h1>
-        <h2>Professional CV</h2>
+        <p>Professional with expertise in AI, UI/UX design, and marketing.</p>
+    </div>
+
+    <div class="container">
         <div class="section">
             <h3>Summary</h3>
-            <p>Professional with over 10 years of experience in operations, design, marketing, and AI technologies...</p>
+            <p>
+                Over 10 years of experience in operations, design, marketing, and technology.
+                Skilled in AI tools, cryptocurrency, project management, and training.
+            </p>
         </div>
+
+        <div class="section contact">
+            <div>
+                <h3>Contact</h3>
+                <p>Email: your_email@example.com</p>
+                <p>Phone: +201XXXXXXXXX</p>
+                <p>Location: Mansoura, Egypt</p>
+            </div>
+            <div>
+                <h3>Languages</h3>
+                <p>Arabic: Native</p>
+                <p>English: Advanced</p>
+            </div>
+        </div>
+
         <div class="section">
             <h3>Skills</h3>
-            <ul>
-                <li>AI tools and analysis</li>
-                <li>Project management</li>
-                <li>UI/UX design</li>
-                <li>Marketing and social media</li>
-                <li>Cryptocurrency trading</li>
-                <li>Graphic design with Adobe tools</li>
-            </ul>
+            <div class="skills">
+                <div>
+                    <ul>
+                        <li>AI tools and analysis</li>
+                        <li>Project management</li>
+                        <li>UI/UX design</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>Graphic design (Adobe Suite)</li>
+                        <li>Cryptocurrency trading</li>
+                        <li>Training and coaching</li>
+                    </ul>
+                </div>
+            </div>
         </div>
+
         <div class="section">
             <h3>Experience</h3>
             <ul>
@@ -68,18 +142,18 @@
                 <li><b>Freelance Designer</b> (2016 - Present)</li>
             </ul>
         </div>
+        <div class="section photo-section">
+            <h3>Projects</h3>
+            <img src="project1.jpg" alt="Project 1">
+            <img src="project2.jpg" alt="Project 2">
+        </div>
+
         <div class="section">
             <h3>Education</h3>
             <p>Bachelor of Commerce - Mansoura University (2021)</p>
         </div>
-        <div class="section">
-            <h3>Languages</h3>
-            <p>Arabic (native), English (advanced)</p>
-        </div>
-        <div class="section">
-            <h3>Contact</h3>
-            <p>Email: your_email@example.com</p>
-            <p>Phone: +201XXXXXXXXX</p>
+        <div class="btn-download">
+            <a href="CV.pdf" download>Download CV (PDF)</a>
         </div>
     </div>
 </body>
