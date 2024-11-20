@@ -3,157 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Shafik Salah</title>
+    <title>Shafik Salah - CV</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
+            background: #f9f9f9;
             color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .header {
-            background: #007bff;
-            color: white;
-            padding: 20px 10px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
         }
         .header img {
             border-radius: 50%;
             width: 120px;
             height: 120px;
-            margin-top: 10px;
+            margin-right: 20px;
         }
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .header h1 {
+            margin: 0;
+            color: #007bff;
         }
-        h1, h2, h3 {
-            text-align: center;
-            margin-bottom: 20px;
+        .header p {
+            margin: 5px 0;
+            color: #666;
+        }
+        h2 {
+            color: #007bff;
+            margin-bottom: 10px;
         }
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
-        .section h3 {
-            color: #007bff;
-            border-bottom: 2px solid #f4f4f4;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-        }
-        ul {
-            list-style: none;
+        .section ul {
+            list-style-type: none;
             padding: 0;
         }
-        ul li {
+        .section ul li {
             margin-bottom: 10px;
         }
-        .contact, .skills {
+        .section a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .section a:hover {
+            text-decoration: underline;
+        }
+        .skills {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
             gap: 10px;
         }
-        .contact div, .skills div {
-            flex: 1;
-        }
-        .photo-section img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            margin: 10px 0;
-            border-radius: 10px;
-        }
-        .btn-download {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .btn-download a {
+        .skills span {
             background: #007bff;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .btn-download a:hover {
-            background: #0056b3;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="profile.jpg" alt="Your Photo">
-        <h1>Shafik Salah</h1>
-        <p>Professional with expertise in AI, UI/UX design, and marketing.</p>
-    </div>
-
     <div class="container">
-        <div class="section">
-            <h3>Summary</h3>
-            <p>
-                Over 10 years of experience in operations, design, marketing, and technology.
-                Skilled in AI tools, cryptocurrency, project management, and training.
-            </p>
-        </div>
-
-        <div class="section contact">
+        <!-- Header Section -->
+        <div class="header">
+            <img src="profile.jpg" alt="Profile Picture">
             <div>
-                <h3>Contact</h3>
-                <p>Email: your_email@example.com</p>
-                <p>Phone: +201XXXXXXXXX</p>
-                <p>Location: Mansoura, Egypt</p>
-            </div>
-            <div>
-                <h3>Languages</h3>
-                <p>Arabic: Native</p>
-                <p>English: Advanced</p>
+                <h1>Shafik Salah</h1>
+                <p>UI/UX Designer | AI Specialist | Digital Marketer</p>
+                <a href="https://github.com/YourGitHub" target="_blank">View My GitHub Profile</a>
             </div>
         </div>
 
+        <!-- Work Experience -->
         <div class="section">
-            <h3>Skills</h3>
-            <div class="skills">
-                <div>
-                    <ul>
-                        <li>AI tools and analysis</li>
-                        <li>Project management</li>
-                        <li>UI/UX design</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>Graphic design (Adobe Suite)</li>
-                        <li>Cryptocurrency trading</li>
-                        <li>Training and coaching</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h3>Experience</h3>
+            <h2>Work Experience</h2>
             <ul>
-                <li><b>Kitchen Manager</b> - Al-Masiya (2023 - Present)</li>
-                <li><b>Digital Marketer</b> - Chingari (2022 - 2023)</li>
-                <li><b>Freelance Designer</b> (2016 - Present)</li>
+                <li><strong>Kitchen Manager</strong> @ Al-Masiya (2023 - Present)</li>
+                <p>Managed over 150 projects from client consultation to delivery.</p>
+                <li><strong>Digital Marketer</strong> @ Chingari (2022 - 2023)</li>
+                <p>Built an Arab community for the app and drove its growth regionally.</p>
             </ul>
         </div>
-        <div class="section photo-section">
-            <h3>Projects</h3>
-            <img src="project1.jpg" alt="Project 1">
-            <img src="project2.jpg" alt="Project 2">
+
+        <!-- Certificates -->
+        <div class="section">
+            <h2>Certificates</h2>
+            <ul>
+                <li>Advanced Data Analysis Nanodegree - Udacity</li>
+                <li>Google Marketing Fundamentals Workshop</li>
+            </ul>
         </div>
 
+        <!-- Skills -->
         <div class="section">
-            <h3>Education</h3>
+            <h2>Skills</h2>
+            <div class="skills">
+                <span>UI/UX Design</span>
+                <span>Adobe Suite</span>
+                <span>AI Tools</span>
+                <span>Cryptocurrency</span>
+                <span>Project Management</span>
+                <span>Social Media Marketing</span>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2>Education</h2>
             <p>Bachelor of Commerce - Mansoura University (2021)</p>
         </div>
-        <div class="btn-download">
-            <a href="CV.pdf" download>Download CV (PDF)</a>
+
+        <!-- Projects -->
+        <div class="section">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Kitchen Design</strong>: Designed custom kitchens with 3D modeling tools.</li>
+                <li><strong>AI Analysis Tools</strong>: Implemented AI-driven solutions for process automation.</li>
+            </ul>
+        </div>
+        <!-- Contact -->
+        <div class="section">
+            <h2>Contact</h2>
+            <p>Email: your_email@example.com</p>
+            <p>Phone: +201XXXXXXXXX</p>
         </div>
     </div>
 </body>
