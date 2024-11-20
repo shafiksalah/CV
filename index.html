@@ -49,15 +49,6 @@
         .section {
             margin-bottom: 20px;
         }
-        .skills span {
-            display: inline-block;
-            background: #ffffff;
-            color: #007bff;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            margin: 5px;
-        }
         ul {
             list-style-type: none;
             padding: 0;
@@ -90,8 +81,7 @@
             <div class="profile-pic">
                 <img src="profile.jpg" alt="صورة شفيق صلاح">
             </div>
-            <h1>شفيق صلاح</h1>
-            <p id="summary">محترف متعدد المهارات</p>
+            <h1 id="name">شفيق صلاح</h1>
 
             <div class="section">
                 <h2>المعلومات الشخصية</h2>
@@ -100,7 +90,10 @@
                 <p>البريد الإلكتروني: [أدخل بريدك الإلكتروني هنا]</p>
                 <p>رقم الهاتف: [أدخل رقم هاتفك هنا]</p>
             </div>
+        </div>
 
+        <!-- الجزء الأيمن -->
+        <div class="right">
             <div class="section">
                 <h2>الملخص المهني</h2>
                 <p id="summary-ar">محترف متعدد المهارات بخبرة تمتد لأكثر من 10 سنوات في إدارة العمليات، التصميم، التسويق، وتدريب الفرق. أمتلك خبرة شاملة في التعاقد على أكثر من 150 مشروع مطبخ من البداية إلى التسليم.</p>
@@ -109,69 +102,56 @@
 
             <div class="section">
                 <h2>المهارات الأساسية</h2>
-                <div id="skills-ar">
-                    <span>إدارة المشاريع</span>
-                    <span>تدريب الأفراد</span>
-                    <span>UI/UX</span>
-                    <span>Adobe Suite</span>
-                    <span>العملات الرقمية</span>
-                    <span>التسويق الرقمي</span>
-                </div>
-                <div id="skills-en" style="display:none;">
-                    <span>Project Management</span>
-                    <span>Team Training</span>
-                    <span>UI/UX</span>
-                    <span>Adobe Suite</span>
-                    <span>Cryptocurrencies</span>
-                    <span>Digital Marketing</span>
-                </div>
+                <ul id="skills-ar">
+                    <li>إدارة المشاريع وتنفيذها</li>
+                    <li>التدريب وتطوير الأفراد</li>
+                    <li>تصميم واجهات وتجارب المستخدم (UI/UX)</li>
+                    <li>التصميم الإبداعي</li>
+                    <li>التكنولوجيا والعملات الرقمية</li>
+                    <li>التسويق الرقمي وإدارة المحتوى</li>
+                </ul>
+                <ul id="skills-en" style="display:none;">
+                    <li>Project Management and Execution</li>
+                    <li>Training and Individual Development</li>
+                    <li>UI/UX Design</li>
+                    <li>Creative Design</li>
+                    <li>Technology and Cryptocurrencies</li>
+                    <li>Digital Marketing and Content Management</li>
+                </ul>
             </div>
-        </div>
-
-        <!-- الجزء الأيمن -->
-        <div class="right">
             <div class="section">
                 <h2>الخبرات العملية</h2>
                 <ul id="experience-ar">
-                    <li><strong>مدير معرض مطابخ</strong> - شركة الماسية (2023 - حتى الآن)</li>
-                    <p>إدارة العمليات اليومية والتعاقد على أكثر من 150 مطبخ.</p>
-                    <!-- بقية التجارب -->
+                    <li>مدير معرض مطابخ - شركة الماسية (2023 - حتى الآن)</li>
+                    <li>مصمم UI/UX - مستقل (2020 - حتى الآن)</li>
+                    <li>مدرب في مجالات المبيعات والتكنولوجيا - مستقل (2019 - حتى الآن)</li>
+                    <li>محلل ومدير عملات رقمية - مستقل (2020 - حتى الآن)</li>
                 </ul>
                 <ul id="experience-en" style="display:none;">
-                    <li><strong>Kitchen Showroom Manager</strong> - Al-Masia Company (2023 - Present)</li>
-                    <p>Managed daily operations and contracted over 150 kitchens.</p>
-                    <!-- Other experiences -->
+                    <li>Kitchen Showroom Manager - Al-Masia Company (2023 - Present)</li>
+                    <li>UI/UX Designer - Freelancer (2020 - Present)</li>
+                    <li>Trainer in Sales and Technology - Freelancer (2019 - Present)</li>
+                    <li>Cryptocurrency Analyst and Manager - Freelancer (2020 - Present)</li>
                 </ul>
             </div>
-
-            <div class="section">
-                <h2>التعليم</h2>
-                <p id="education-ar">بكالوريوس تجارة - جامعة المنصورة (2021)</p>
-                <p id="education-en" style="display:none;">Bachelor of Commerce - Mansoura University (2021)</p>
-            </div>
-
-            <!-- بقية الأقسام مشابهة باستخدام نفس النهج -->
         </div>
     </div>
 
     <script>
         function toggleLanguage() {
-            // تغيير بين العربية والإنجليزية
-            var isArabic = document.getElementById("summary-ar").style.display !== "none";
-            
+            const isArabic = document.getElementById("summary-ar").style.display !== "none";
+
+            // التبديل بين النصوص
             document.getElementById("summary-ar").style.display = isArabic ? "none" : "block";
             document.getElementById("summary-en").style.display = isArabic ? "block" : "none";
             
             document.getElementById("skills-ar").style.display = isArabic ? "none" : "block";
             document.getElementById("skills-en").style.display = isArabic ? "block" : "none";
-            
+
             document.getElementById("experience-ar").style.display = isArabic ? "none" : "block";
             document.getElementById("experience-en").style.display = isArabic ? "block" : "none";
-            
-            document.getElementById("education-ar").style.display = isArabic ? "none" : "block";
-            document.getElementById("education-en").style.display = isArabic ? "block" : "none";
 
-            // تغيير النص داخل زر التبديل
+            // تغيير نص الزر
             document.querySelector(".language-toggle").innerText = isArabic ? "التبديل إلى العربية" : "Switch to English";
         }
     </script>
