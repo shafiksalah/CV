@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,83 +13,61 @@
             text-align: right;
             background-color: #f5f5f5;
         }
-
         .container {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 20px;
-            max-width: 1200px;
-            margin: 20px auto;
             padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-
         .sidebar {
+            text-align: center;
             background-color: #007bff;
-            color: #ffffff;
+            color: white;
             padding: 20px;
             border-radius: 10px;
-            text-align: center;
         }
-
         .sidebar img {
             width: 150px;
             height: 150px;
             object-fit: cover;
             border-radius: 50%;
             margin-bottom: 20px;
-            border: 3px solid #ffffff;
+            border: 3px solid white;
         }
-
-        .sidebar h2 {
-            margin-bottom: 10px;
-            font-size: 1.5em;
-        }
-
-        .sidebar ul {
-            padding: 0;
-            list-style: none;
-        }
-
         .content {
-            background-color: #ffffff;
-            border-radius: 10px;
+            background-color: white;
             padding: 20px;
+            border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
         .content h2 {
             color: #007bff;
-            margin-bottom: 10px;
         }
-
         ul {
             list-style-type: none;
             padding: 0;
         }
-
         ul li {
             margin-bottom: 10px;
         }
-
         .toggle-button {
             position: fixed;
             top: 20px;
             right: 20px;
-            background-color: #ffffff;
+            padding: 10px 20px;
+            background-color: white;
             color: #007bff;
             border: 1px solid #007bff;
             border-radius: 5px;
-            padding: 10px 20px;
             cursor: pointer;
-            z-index: 1000;
         }
     </style>
 </head>
 <body>
     <button class="toggle-button" onclick="toggleLanguage()">Switch to English</button>
-
     <div class="container">
-        <!-- Sidebar Section -->
         <div class="sidebar">
             <img src="photo1.jpg" alt="Profile Picture">
             <h2 id="personal-title">المعلومات الشخصية</h2>
@@ -100,26 +78,15 @@
                 <li>البريد الإلكتروني: Shafiksalah44@gmail.com</li>
                 <li>رقم الهاتف: 01000266475</li>
             </ul>
-
-            <h2 id="skills-title">أتقن التعامل مع</h2>
-            <ul id="skills-info">
-                <li>Adobe Suite</li>
-                <li>AI Tools</li>
-                <li>Marketing</li>
-                <li>Google Ads</li>
-                <li>3D Design</li>
-                <li>Cryptocurrency's BlockChains</li>
-            </ul>
         </div>
-
-        <!-- Content Section -->
         <div class="content">
             <h2 id="summary-title">الملخص المهني</h2>
-            <p id="summary-info">
-                محترف متعدد المهارات بخبرة أكثر من 6 سنوات في التصميم، التسويق، وتدريب الفرق. تمكنت من زيادة المبيعات بنسبة 20% وشاركت في تسليم أكثر من 75 مشروعًا بنجاح.
-            </p>
+            <ul id="summary-info">
+                <li>محترف متعدد المهارات بخبرة تمتد لأكثر من 6 سنوات في التصميم، التسويق، والإدارة.</li>
+                <li>زيادة المبيعات بنسبة 20% وتسليم أكثر من 75 مشروعًا بنجاح.</li>
+            </ul>
 
-            <h2 id="core-skills-title">المهارات الأساسية</h2>
+            <h2 id="core-skills-title">📊 المهارات الأساسية</h2>
             <ul id="core-skills-info">
                 <li>حل المشاكل</li>
                 <li>التصميم الإبداعي</li>
@@ -127,36 +94,60 @@
                 <li>التسويق الرقمي</li>
             </ul>
 
-            <h2 id="work-experience-title">الخبرات العملية</h2>
+            <h2 id="work-experience-title">💼 الخبرات العملية</h2>
             <ul id="work-experience-info">
                 <li>مسوق رقمي - Chingari (2022-2023)</li>
-                <li>مدير معرض مطابخ - الماسية (2023-حتى الآن)</li>
+                <li>مدير معرض مطابخ - شركة الماسية (2023-حتى الآن)</li>
             </ul>
 
             <h2 id="education-title">🎓 التعليم</h2>
             <ul id="education-info">
                 <li>بكالوريوس تجارة - جامعة المنصورة (2021)</li>
+            </ul>
+
+            <h2 id="certifications-title">📜 الشهادات</h2>
+            <ul id="certifications-info">
                 <li>شهادة "المليون مبرمج عربي" (2018)</li>
                 <li>دورات احترافية في UI/UX Design باستخدام Figma وAdobe XD</li>
                 <li>ورش عمل مقدمة من جوجل وشركات أخرى</li>
             </ul>
         </div>
     </div>
-
     <script>
         let isArabic = true;
 
         const translations = {
-            arabic: { ... },
-            english: { ... }
+            arabic: {
+                personalTitle: "المعلومات الشخصية",
+                summaryTitle: "الملخص المهني",
+                coreSkillsTitle: "📊 المهارات الأساسية",
+                workExperienceTitle: "💼 الخبرات العملية",
+                educationTitle: "🎓 التعليم",
+                certificationsTitle: "📜 الشهادات",
+            },
+            english: {
+                personalTitle: "Personal Information",
+                summaryTitle: "Professional Summary",
+                coreSkillsTitle: "📊 Core Skills",
+                workExperienceTitle: "💼 Work Experience",
+                educationTitle: "🎓 Education",
+                certificationsTitle: "📜 Certifications",
+            }
         };
 
         function toggleLanguage() {
             const language = isArabic ? "english" : "arabic";
-            document.body.style.direction = isArabic ? "ltr" : "rtl";
-            document.body.style.textAlign = isArabic ? "left" : "right";
-            // Update all content dynamically...
             isArabic = !isArabic;
+
+            document.body.style.direction = isArabic ? "rtl" : "ltr";
+            document.body.style.textAlign = isArabic ? "right" : "left";
+
+            document.getElementById("personal-title").innerText = translations[language].personalTitle;
+            document.getElementById("summary-title").innerText = translations[language].summaryTitle;
+            document.getElementById("core-skills-title").innerText = translations[language].coreSkillsTitle;
+            document.getElementById("work-experience-title").innerText = translations[language].workExperienceTitle;
+            document.getElementById("education-title").innerText = translations[language].educationTitle;
+            document.getElementById("certifications-title").innerText = translations[language].certificationsTitle;
         }
     </script>
 </body>
