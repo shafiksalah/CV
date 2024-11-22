@@ -1,124 +1,106 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - شفيق صلاح</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(45deg, #007bff, #00d2ff);
-            color: #333;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
+            direction: rtl; /* يبدأ بالعربية */
+            text-align: right;
+            transition: direction 0.5s, text-align 0.5s;
+            background-color: #f5f5f5;
+	   overflow-x: hidden;
 
+        }
         .container {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 30px;
-            padding: 50px;
+            gap: 20px;
+            padding: 20px;
             max-width: 1200px;
-            margin: auto;
+            margin: 0 auto;
+            transition: all 0.5s ease;
         }
-
         .sidebar {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            transform: translateY(50px);
-            opacity: 0;
-            animation: fadeInUp 1s forwards 0.5s;
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+	    transform: translateY(50px);
+            animation: fadeInUp 1s forwards 0.3s;
         }
-
         .sidebar img {
             width: 150px;
             height: 150px;
             object-fit: cover;
             border-radius: 50%;
-            border: 4px solid #fff;
             margin-bottom: 20px;
-            transition: transform 0.3s ease;
+            border: 3px solid white;
+            /*text-align: center;*/
         }
-
-        .sidebar img:hover {
-            transform: scale(1.1);
+        .sidebar h1, h2, h4 {
+            color: white;
         }
-
-        .sidebar h2 {
-            font-size: 1.5em;
+        .sidebar span {
+            display: inline-block;
+            background: #ffffff;
             color: #007bff;
-            margin-bottom: 15px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 5px;
         }
-
-        .sidebar ul {
-            padding: 0;
-            list-style-type: none;
-            font-size: 1em;
-        }
-
-        .sidebar ul li {
-            margin: 12px 0;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .sidebar ul li:hover {
-            color: #00d2ff;
-        }
-
         .content {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            transform: translateY(50px);
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             opacity: 0;
-            animation: fadeInUp 1s forwards 0.8s;
+            transform: translateY(50px);
+            animation: fadeInUp 1s forwards 0.5s;
         }
-
         .content h2 {
             color: #007bff;
-            font-size: 2em;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
-
-        .content ul {
+        ul {
             list-style-type: none;
-            font-size: 1.2em;
             padding: 0;
         }
-
-        .content ul li {
-            margin-bottom: 15px;
+        ul li {
+            margin-bottom: 10px;
             opacity: 0;
             animation: fadeIn 1s forwards;
+            animation-delay: 0.3s;
         }
-
+        .content span {
+            display: inline-block;
+            background: #007bff;
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 1.0em;
+            margin: 5px;
+        }
         .toggle-button {
             position: fixed;
             top: 20px;
-            left: 20px;
-            padding: 15px 30px;
-            background-color: #fff;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #ffffff;
             color: #007bff;
-            border: 2px solid #007bff;
-            border-radius: 10px;
-            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
-            z-index: 1000;
-            transition: all 0.3s ease;
         }
-
-        .toggle-button:hover {
-            transform: scale(1.1);
-            background-color: #007bff;
-            color: white;
-        }
-
+        
+        /* Animations */
         @keyframes fadeInUp {
             0% {
                 opacity: 0;
@@ -138,57 +120,111 @@
                 opacity: 1;
             }
         }
-
+        
     </style>
 </head>
 <body>
-
     <button class="toggle-button" onclick="toggleLanguage()">Switch to English</button>
-
     <div class="container">
         <div class="sidebar">
-            <img src="photo1.jpg" alt="Profile Picture">
+            <img src="photo1.jpg" alt="Profile Image">
             <h2 id="personal-title">المعلومات الشخصية</h2>
             <ul id="personal-info">
-                <li>الاسم: شفيق صلاح شفيق السحلول</li>
-                <li>العمر: 25</li>
-                <li>مكان الإقامة: المنصورة، مصر</li>
-                <li>البريد الإلكتروني: Shafiksalah44@gmail.com</li>
-                <li>رقم الهاتف: 01000266475</li>
+                <li><h4>الاسم: شفيق صلاح شفيق السحلول</h4></li>
+                <li><h4>العمر: 25</h4></li>
+                <li><h4>مكان الإقامة: المنصورة، مصر</h4></li>
+                <li><h4>البريد الإلكتروني: Shafiksalah44@gmail.com</h4></li>
+                <li><h4>رقم الهاتف: 01000266475</h4></li>
+            </ul>
+            <h2 id="skills-title">أتقن التعامل مع</h2>
+            <ul id="skills-info">
+                <span>Adobe Suite</span>
+                <span>AI Tools</span>
+                <span>Marketing</span>
+                <span>Youtube Suite</span>
+                <span>Meta Business Suite</span>
+                <span>Google Ads</span>
+                <span>Android Studio</span>
+                <span>3D Design</span>
+                <span>Cryptocurrency's BlockChains</span>
+            </ul>
+            <h2 id="hobbies-title"> الهوايات</h2>
+            <ul id="hobbies-info">
+                <span>متابعة أحدث التقنيات</span>
+                <span>التعلم الذاتي</span>
+                <span>الإستماع للبودكاست</span>
+                <span>القراءة</span>
+                <span>مساعدة الآخرين</span>
+            </ul>
+            <h2 id="languages-title">اللغات</h2>
+            <ul id="languages-info">
+                <span>العربية</span>
+                <span>الإنجليزية</span>
             </ul>
         </div>
         <div class="content">
             <h2 id="summary-title">الملخص المهني</h2>
-            <ul id="summary-info">
-                <li>محترف متعدد المهارات بخبرة تمتد لأكثر من 6 سنوات في التصميم، التسويق، والإدارة.</li>
-                <li>زيادة المبيعات بنسبة 20% وتسليم أكثر من 75 مشروعًا بنجاح.</li>
-            </ul>
+            <p id="summary-info">
+                <li>
+                محترف متعدد المهارات بخبرة تمتد لأكثر من 6 سنوات في التصميم، التسويق،الإدارة، وتدريب الفرق. 
+                أمتلك خبرة تجعلني ازيد المبيعات بمقدار 20% حيث تعاقدت علي أكثر من 75 مطبخ في فترة وجيزة وتابعتة من البداية إلى التسليم. 
+                حضّرت ورش عمل متنوعة مقدمة من جوجل وشركات أخرى، أجعل أغلب وقت فراغي للتعلم الذاتي المستمر من الإنترنت لتطوير مهاراتي.
+                </li></p>
 
-            <h2 id="core-skills-title">📊 المهارات الأساسية</h2>
-            <ul id="core-skills-info">
-                <li>حل المشاكل</li>
-                <li>التصميم الإبداعي</li>
-                <li>إدارة المشاريع وتنفيذها</li>
-                <li>التسويق الرقمي</li>
-            </ul>
+            <h2 id="coreSkills-title">📊 المهارات الأساسية</h2>
+            <p id="coreSkills-info">
+                <span>حل المشاكل</span>
+                <span> التصميم الإبداعي</span>
+                <span>التدريب وتطوير الأفراد</span>
+                <span>إدارة المشاريع وتنفيذها</span>
+                <span>التكنولوجيا والعملات الرقمية</span>
+                <span>التسويق الرقمي وإدارة المحتوى</span>
 
-            <h2 id="work-experience-title">💼 الخبرات العملية</h2>
-            <ul id="work-experience-info">
-                <li>مسوق رقمي - Chingari (2022-2023)</li>
-                <li>مدير معرض مطابخ - شركة الماسية (2023-حتى الآن)</li>
-            </ul>
+                <li>تبسيط وتفكيك واعادة ترتيب ليسهل حلها والبحث عن بدائل إذا تطلب الأمر</li>
+           
+            
+                <li>اتقان برامج Adobe للتصميم والمونتاج Photoshop, Illustrator, Premiere Pro, After effect</li>
+                <li>تصميم واجهات مبتكرة وعصرية مع تجربة مستخدم سلسة باستخدام Adobe XD, Figma</li>
+                
+            
+                <li>تدريب الأشخاص علي المبيعات، التعامل مع الانترنت، واستعمال التكنولوجيا بكفاءة</li>
+                <li>استخدام أساليب شرح مبتكرة تسهل التعلم </li>
+                
+            
+                <li>التعاقد علي مشاريع متعددة من البداية الي التسليم النهائي</li>
+                <li>الاشراف عل كل تفاصيل المشروع لضمان تحقيق الجودة والرضاء</li>
+                
+            
+                <li>خبرة في التعامل مع ال Web3 والعملات الرقمية وتحليلها</li>
+                <li>باحث ومتتبع للمعاملات علي جميع شبكات ال BlockChains</li>
+                
+            
+                <li>بناء استراتيجيات تسويق رقمية فعالة وإدارة الحملات علي وسائل التواصل الإجتماعي</li>
+                <li>قادر علي بناء مجتمع رقمي منتمي للشركة</li>
+            </p>
+            
+            <h2 id="workExperience-title">💼 الخبرات العملية</h2>
+            <p id="workExperience-info">
 
+                <li>ادارة المحتوي الرقمي تصميم وتسويق - مستقل (2016 - حتى الآن)</li>
+                <li>مبرمج تطبيقات اندرويد - مستقل (2018 - 2020)</li>
+                <li>مصمم UI/UX  - مستقل (2019 - حتى الآن)</li>
+                <li>مدرب في مجال التكنولوجيا - مستقل (2022 - حتى الآن)</li>
+                <li>مسوق رقمي - شركة Chingari الهندية (2022-2023)</li>
+                <li>مدير معرض مطابخ - شركة الماسية (2023 - حتى الآن)</li>
+            </p>
+            
             <h2 id="education-title">🎓 التعليم</h2>
-            <ul id="education-info">
-                <li>بكالوريوس تجارة - جامعة المنصورة (2021)</li>
-            </ul>
-
+            <p id="education-info">
+                <li>بكالوريوس تجارة، جامعة المنصورة (2021)</li>
+            </p>
+            
             <h2 id="certifications-title">📜 الشهادات</h2>
-            <ul id="certifications-info">
+            <p id="certifications-info">
                 <li>شهادة "المليون مبرمج عربي" (2018)</li>
                 <li>دورات احترافية في UI/UX Design باستخدام Figma وAdobe XD</li>
                 <li>ورش عمل مقدمة من جوجل وشركات أخرى</li>
-            </ul>
+             </p>
         </div>
     </div>
 
@@ -198,37 +234,232 @@
         const translations = {
             arabic: {
                 personalTitle: "المعلومات الشخصية",
+                skillsTitle: "أتقن التعامل مع",
+                hobbiesTitle: "الهوايات",
+                languagesTitle: "اللغات",
                 summaryTitle: "الملخص المهني",
                 coreSkillsTitle: "📊 المهارات الأساسية",
                 workExperienceTitle: "💼 الخبرات العملية",
                 educationTitle: "🎓 التعليم",
                 certificationsTitle: "📜 الشهادات",
+                personalInfo: `
+                    <li>الاسم: شفيق صلاح</li>
+                    <li>العمر: 25</li>
+                    <li>مكان الإقامة: المنصورة، مصر</li>
+                    <li>البريد الإلكتروني: Shafiksalah44@gmail.com</li>
+                    <li>رقم الهاتف: 01000266475</li>
+                `,
+                skillsInfo: `
+                    <span>Adobe Suite</span>
+                    <span>AI Tools</span>
+                    <span>Marketing</span>
+                    <span>Youtube Suite</span>
+                    <span>Meta Business Suite</span>
+                    <span>Google Ads</span>
+                    <span>Android Studio</span>
+                    <span>3D Design</span>
+                    <span>Cryptocurrency's BlockChains</span>
+                `,
+                hobbiesInfo: 
+                    <span>متابعة أحدث التقنيات</span>
+                    <span>التعلم الذاتي</span>
+                    <span>الإستماع للبودكاست</span>
+                    <span>القراءة</span>
+                    <span>مساعدة الآخرين</span>
+                ,
+                
+                languagesInfo:
+                    
+                    <span>العربية</span>
+                    <span>الإنجليزية</span>
+                ,
+                
+                summaryInfo: 
+                    
+                    <li>
+                    محترف متعدد المهارات بخبرة تمتد لأكثر من 6 سنوات في التصميم، التسويق،الإدارة، وتدريب الفرق. أمتلك خبرة تجعلني ازيد المبيعات بمقدار 20% حيث تعاقدت علي أكثر من 75 مطبخ في فترة وجيزة وتابعتة من البداية إلى التسليم. حضّرت ورش عمل متنوعة مقدمة من جوجل وشركات أخرى، أجعل أغلب وقت فراغي للتعلم الذاتي المستمر من الإنترنت لتطوير مهاراتي.
+                    </li>
+                ,
+
+                coreskillsInfo:
+
+                    <span>حل المشاكل</span>
+                    <span> التصميم الإبداعي</span>
+                    <span>التدريب وتطوير الأفراد</span>
+                    <span>إدارة المشاريع وتنفيذها</span>
+                    <span>التكنولوجيا والعملات الرقمية</span>
+                    <span>التسويق الرقمي وإدارة المحتوى</span>
+    
+                    <li>تبسيط وتفكيك واعادة ترتيب ليسهل حلها والبحث عن بدائل إذا تطلب الأمر</li>
+            
+                    <li>اتقان برامج Adobe للتصميم والمونتاج Photoshop, Illustrator, Premiere Pro, After effect</li>
+                    <li>تصميم واجهات مبتكرة وعصرية مع تجربة مستخدم سلسة باستخدام Adobe XD, Figma</li>
+                
+            
+                    <li>تدريب الأشخاص علي المبيعات، التعامل مع الانترنت، واستعمال التكنولوجيا بكفاءة</li>
+                    <li>استخدام أساليب شرح مبتكرة تسهل التعلم </li>
+                
+            
+                    <li>التعاقد علي مشاريع متعددة من البداية الي التسليم النهائي</li>
+                    <li>الاشراف عل كل تفاصيل المشروع لضمان تحقيق الجودة والرضاء</li>
+                    
+                
+                    <li>خبرة في التعامل مع ال Web3 والعملات الرقمية وتحليلها</li>
+                    <li>باحث ومتتبع للمعاملات علي جميع شبكات ال BlockChains</li>
+                
+                
+                    <li>بناء استراتيجيات تسويق رقمية فعالة وإدارة الحملات علي وسائل التواصل الإجتماعي</li>
+                    <li>قادر علي بناء مجتمع رقمي منتمي للشركة</li>
+                
+                ,
+
+                workexperienceInfo:
+        
+                    <li>ادارة المحتوي الرقمي تصميم وتسويق - مستقل (2016 - حتى الآن)</li>
+                    <li>مبرمج تطبيقات اندرويد - مستقل (2018 - 2020)</li>
+                    <li>مصمم UI/UX  - مستقل (2019 - حتى الآن)</li>
+                    <li>مدرب في مجال التكنولوجيا - مستقل (2022 - حتى الآن)</li>
+                    <li>مسوق رقمي - شركة Chingari الهندية (2022-2023)</li>
+                    <li>مدير معرض مطابخ - شركة الماسية (2023 - حتى الآن)</li>
+                ,
+
+                certificationsInfo:
+                        <li>شهادة "المليون مبرمج عربي" (2018)</li>
+                        <li>دورات احترافية في UI/UX Design باستخدام Figma وAdobe XD</li>
+                        <li>ورش عمل مقدمة من جوجل وشركات أخرى</li>
+                ,
+                educationInfo: "بكالوريوس تجارة، جامعة المنصورة (2021)"
             },
             english: {
                 personalTitle: "Personal Information",
+                skillsTitle: "Proficient In",
+                hobbiesTitle: "Hobbies",
+                languagesTitle: "Languages",
                 summaryTitle: "Professional Summary",
-                coreSkillsTitle: "📊 Core Skills",
-                workExperienceTitle: "💼 Work Experience",
+                coreskillsTitle: "📊 Core Skills",
+                workexperienceTitle: "💼 Work Experience",
                 educationTitle: "🎓 Education",
                 certificationsTitle: "📜 Certifications",
+                personalInfo: `
+                    <li>Name: Shafik Salah</li>
+                    <li>Age: 25</li>
+                    <li>Location: Mansoura, Egypt</li>
+                    <li>Email: Shafiksalah44@gmail.com</li>
+                    <li>Phone: 01000266475</li>
+                `,
+                skillsInfo: `
+                    <span>Adobe Suite</span>
+                    <span>AI Tools</span>
+                    <span>Marketing</span>
+                    <span>Youtube Suite</span>
+                    <span>Meta Business Suite</span>
+                    <span>Google Ads</span>
+                    <span>Android Studio</span>
+                    <span>3D Design</span>
+                    <span>Cryptocurrency's BlockChains</span>
+                `,
+                
+                    hobbiesInfo: 
+                    <span>متابعة أحدث التقنيات</span>
+                    <span>التعلم الذاتي</span>
+                    <span>الإستماع للبودكاست</span>
+                    <span>القراءة</span>
+                    <span>مساعدة الآخرين</span>
+                ,
+                
+                languagesInfo:
+                    
+                    <span>العربية</span>
+                    <span>الإنجليزية</span>
+                ,
+                
+                summaryInfo: 
+                    
+                    <li>محترف متعدد المهارات بخبرة تمتد لأكثر من 6 سنوات في التصميم، التسويق،الإدارة، وتدريب الفرق. 
+                أمتلك خبرة تجعلني ازيد المبيعات بمقدار 20% حيث تعاقدت علي أكثر من 75 مطبخ في فترة وجيزة وتابعتة من البداية إلى التسليم. 
+                حضّرت ورش عمل متنوعة مقدمة من جوجل وشركات أخرى، أجعل أغلب وقت فراغي للتعلم الذاتي المستمر من الإنترنت لتطوير مهاراتي.</li>
+                ,
+
+                coreskillsInfo:
+
+                    <span>حل المشاكل</span>
+                    <span> التصميم الإبداعي</span>
+                    <span>التدريب وتطوير الأفراد</span>
+                    <span>إدارة المشاريع وتنفيذها</span>
+                    <span>التكنولوجيا والعملات الرقمية</span>
+                    <span>التسويق الرقمي وإدارة المحتوى</span>
+    
+                    <li>تبسيط وتفكيك واعادة ترتيب ليسهل حلها والبحث عن بدائل إذا تطلب الأمر</li>
+           
+            
+                    <li>اتقان برامج Adobe للتصميم والمونتاج Photoshop, Illustrator, Premiere Pro, After effect</li>
+                    <li>تصميم واجهات مبتكرة وعصرية مع تجربة مستخدم سلسة باستخدام Adobe XD, Figma</li>
+                
+            
+                    <li>تدريب الأشخاص علي المبيعات، التعامل مع الانترنت، واستعمال التكنولوجيا بكفاءة</li>
+                    <li>استخدام أساليب شرح مبتكرة تسهل التعلم </li>
+                
+            
+                    <li>التعاقد علي مشاريع متعددة من البداية الي التسليم النهائي</li>
+                    <li>الاشراف عل كل تفاصيل المشروع لضمان تحقيق الجودة والرضاء</li>
+                    
+                
+                    <li>خبرة في التعامل مع ال Web3 والعملات الرقمية وتحليلها</li>
+                    <li>باحث ومتتبع للمعاملات علي جميع شبكات ال BlockChains</li>
+                
+                
+                    <li>بناء استراتيجيات تسويق رقمية فعالة وإدارة الحملات علي وسائل التواصل الإجتماعي</li>
+                    <li>قادر علي بناء مجتمع رقمي منتمي للشركة</li>
+                
+                ,
+
+                workexperienceInfo:
+        
+                    <li>ادارة المحتوي الرقمي تصميم وتسويق - مستقل (2016 - حتى الآن)</li>
+                    <li>مبرمج تطبيقات اندرويد - مستقل (2018 - 2020)</li>
+                    <li>مصمم UI/UX  - مستقل (2019 - حتى الآن)</li>
+                    <li>مدرب في مجال التكنولوجيا - مستقل (2022 - حتى الآن)</li>
+                    <li>مسوق رقمي - شركة Chingari الهندية (2022-2023)</li>
+                    <li>مدير معرض مطابخ - شركة الماسية (2023 - حتى الآن)</li>
+                ,
+
+                certificationsInfo:
+                        <li>شهادة "المليون مبرمج عربي" (2018)</li>
+                        <li>دورات احترافية في UI/UX Design باستخدام Figma وAdobe XD</li>
+                        <li>ورش عمل مقدمة من جوجل وشركات أخرى</li>
+                ,
+                educationInfo: "Bachelor of Commerce, Mansoura University (2021)"
+            
             }
         };
 
         function toggleLanguage() {
             const language = isArabic ? "english" : "arabic";
-            isArabic = !isArabic;
-
-            document.body.style.direction = isArabic ? "rtl" : "ltr";
-            document.body.style.textAlign = isArabic ? "right" : "left";
-
+            document.body.style.direction = isArabic ? "ltr" : "rtl";
+            document.body.style.textAlign = isArabic ? "left" : "right";
             document.getElementById("personal-title").innerText = translations[language].personalTitle;
+            document.getElementById("skills-title").innerText = translations[language].skillsTitle;
             document.getElementById("summary-title").innerText = translations[language].summaryTitle;
-            document.getElementById("core-skills-title").innerText = translations[language].coreSkillsTitle;
-            document.getElementById("work-experience-title").innerText = translations[language].workExperienceTitle;
             document.getElementById("education-title").innerText = translations[language].educationTitle;
+            document.getElementById("hobbies-title").innerText = translations[language].hobbiesTitle;
+            document.getElementById("languages-title").innerText = translations[language].languagesTitle;
+            document.getElementById("coreskills-title").innerText = translations[language].coreskillsTitle;
+            document.getElementById("workexperience-title").innerText = translations[language].workexperienceTitle;
             document.getElementById("certifications-title").innerText = translations[language].certificationsTitle;
+            
+            document.getElementById("personal-info").innerHTML = translations[language].personalInfo;
+            document.getElementById("skills-info").innerHTML = translations[language].skillsInfo;
+            document.getElementById("summary-info").innerText = translations[language].summaryInfo;
+            document.getElementById("education-info").innerText = translations[language].educationInfo;
+            document.getElementById("hobbies-info").innerText = translations[language].hobbiesInfo;
+            document.getElementById("languages-info").innerText = translations[language].languagesInfo;
+            document.getElementById("coreskills-info").innerText = translations[language].coreskillsInfo;
+            document.getElementById("workexperience-info").innerText = translations[language].workexperienceInfo;
+            document.getElementById("certifications-info").innerText = translations[language].certificationsInfo;
+
+            document.querySelector(".toggle-button").innerText = isArabic ? "العودة إلى العربية" : "Switch to English";
+            isArabic = !isArabic;
         }
     </script>
-
 </body>
 </html>
