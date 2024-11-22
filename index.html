@@ -32,7 +32,7 @@
             color: white;
             padding: 20px;
             border-radius: 8px;
-	   transform: translateY(50px);
+	    transform: translateY(50px);
             animation: fadeInUp 1s forwards 0.3s;
         }
         .sidebar img {
@@ -89,7 +89,7 @@
             font-size: 1.0em;
             margin: 5px;
         }
-        /*.toggle-button {
+        .toggle-button {
             position: fixed;
             top: 20px;
             right: 20px;
@@ -99,7 +99,8 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-        }*/
+	    opacity: 0;
+        }
         
         /* Animations */
         @keyframes fadeInUp {
@@ -126,8 +127,8 @@
 </head>
 <body>
 	
-    /*<button class="toggle-button" onclick="toggleLanguage()">Switch to English</button>*/
-	
+    
+	<button class="toggle-button" onclick="toggleLanguage()">Switch to English</button>
 	
     <div class="container">
         <div class="sidebar">
